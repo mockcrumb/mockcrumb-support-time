@@ -1,0 +1,13 @@
+{
+  "name": "sample1",
+  "customLocalDate": "2011-02-03",
+  "customLocalDateTime": "2011-02-03T04:05:06",
+  "customOffsetDateTimeZulu": "2011-02-03T04:05:06Z",
+  "customOffsetDateTimeZero": "2011-02-03T04:05:06+00:00",
+  "customOffsetDateTimeMinus": "2011-02-03T04:05:06-07:00",
+  "customOffsetDateTimePlus": "2011-02-03T04:05:06+07:00",
+  "customZonedDateTimeZulu": "2011-02-03T04:05:06Z[Europe/London]",
+  "customZonedDateTimeZero": "2011-02-03T04:05:06+00:00[Europe/London]",
+  "customZonedDateTimeMinus": "2011-02-03T04:05:06-02:00[Brazil/East]",
+  "customZonedDateTimePlus": "2011-02-03T04:05:06+01:00[Europe/Warsaw]"
+}
