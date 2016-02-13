@@ -17,17 +17,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 public class TimeSupportedJsonReaderTest {
-    private TimeSupportedJsonCrumbReader reader = new TimeSupportedJsonCrumbReader();
-
     // TODO(maciej.abacus.gowin@gmail.com) Add failure tests
 
     @Test
-    public void shouldSerialize() {
+    public void shouldRead() {
         try {
             // Given && When
             Path sample1Path = Paths.get(TimeSupportedJsonReaderTest.class.getClassLoader()
                     .getResource("data/sample1.json").getPath());
-            Sample sample1 = reader.read(Sample.class, sample1Path);
+            Sample sample1 = TimeSupportedJsonCrumbReader.INSTANCE.read(Sample.class, sample1Path);
 
             // Then
             assertThat(sample1.getName())
