@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.mockcrumb.support.time.test.Sample;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -24,7 +25,7 @@ public class TimeSupportedJsonReaderTest {
         try {
             // Given && When
             Path sample1Path = Paths.get(TimeSupportedJsonReaderTest.class.getClassLoader()
-                    .getResource("data/sample1.json").getPath());
+                    .getResource("data/sample1.json").toURI());
             Sample sample1 = TimeSupportedJsonCrumbReader.INSTANCE.read(Sample.class, sample1Path);
 
             // Then
@@ -54,7 +55,7 @@ public class TimeSupportedJsonReaderTest {
                     .isEqualTo(ZonedDateTime.of(LocalDateTime.of(2011, 2, 3, 4, 5, 6), ZoneId.of("Brazil/East")));
             assertThat(sample1.getCustomZonedDateTimePlus())
                     .isEqualTo(ZonedDateTime.of(LocalDateTime.of(2011, 2, 3, 4, 5, 6), ZoneId.of("Europe/Warsaw")));
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             fail(e.getMessage());
         }
     }
